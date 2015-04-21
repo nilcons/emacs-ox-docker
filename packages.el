@@ -1,0 +1,13 @@
+(setq package-archives '(("melpa-stable" . "http://stable.melpa.org/packages/")
+                         ("org" . "http://orgmode.org/elpa/")))
+(package-refresh-contents)
+(package-initialize)
+(package-install 'haskell-mode)
+(package-install 'lua-mode)
+
+(setq package-archives '(("melpa" . "http://melpa.milkbox.net/packages/")
+                         ("org" . "http://orgmode.org/elpa/")))
+(package-refresh-contents)
+(package-initialize)
+(package-install 'htmlize)
+(package-install 'color-theme)

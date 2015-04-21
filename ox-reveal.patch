@@ -1,0 +1,20 @@
+--- ox-reveal.el	2015-04-10 15:00:19.943950129 +0000
++++ ox-reveal.el.good	2015-04-10 14:59:34.527653201 +0000
+@@ -345,7 +345,7 @@
+       ;; Standard headline.  Export it as a slide
+       (let* ((level (org-export-get-relative-level headline info))
+             (preferred-id (or (org-element-property :CUSTOM_ID headline)
+-                              (org-export-get-headline-id headline info)
++                              (concat "sec-" (mapconcat 'number-to-string (org-export-get-headline-number headline info) "-"))
+                               (org-element-property :ID headline)))
+             (hlevel (org-reveal--get-hlevel info))
+             (header (plist-get info :reveal-slide-header))
+@@ -609,7 +609,7 @@
+   (let ((attr-html (cond (attributes (format " %s" (org-html--make-attribute-string attributes)))
+                          (checkbox (format " class=\"%s\"" (symbol-name checkbox)))
+                          (t "")))
+-	(checkbox (concat (org-html-checkbox checkbox info)
++	(checkbox (concat (org-html-checkbox checkbox)
+ 			  (and checkbox " ")))
+ 	(br (org-html-close-tag "br" nil info)))
+     (concat
