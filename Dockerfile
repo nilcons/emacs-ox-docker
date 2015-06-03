@@ -5,7 +5,7 @@ RUN echo "%wheel ALL=(ALL:ALL) NOPASSWD: ALL" >>/etc/sudoers
 
 USER ox
 WORKDIR /home/ox
-RUN sudo apt-get install -y emacs24-nox
+RUN sudo apt-get install -y emacs24-nox texlive texlive-latex-extra
 
 ADD ox-reveal.patch /home/ox/
 

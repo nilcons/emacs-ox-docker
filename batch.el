@@ -15,4 +15,5 @@
 
 (if (file-exists-p "/ox/compile.el")
     (load-file "/ox/compile.el")
-  (org-reveal-export-to-html))
+  (org-reveal-export-to-html)
+  (org-latex-export-to-latex))
